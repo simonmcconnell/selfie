@@ -1,18 +1,19 @@
 # Selfie
 
-To start your Phoenix server:
+Figuring out what works with a self-referencing polymorphic embbeded schema in a form in Surface and LiveView.
 
-  * Install dependencies with `mix deps.get`
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+## Works
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+ * Using LiveView - `localhost:4000/liveview`
+ * Using Surface w/Phoenix.Component - `localhost:4000/surface/phoenix_component`
+ * Using Surface w/Surface.Component and passing the `form` as a `prop` aka `assign` - `localhost:4000/surface/1`
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+## Does not works
 
-## Learn more
+ * Expecting the `Context` to pass down auto-magically
+ * `localhost:4000/surface/2` to `localhost:4000/surface/5`
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+## To start your Phoenix server:
+
+  * `mix deps.get`
+  * `iex -S mix phx.server`
